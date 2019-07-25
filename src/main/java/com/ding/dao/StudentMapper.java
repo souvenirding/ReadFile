@@ -10,7 +10,7 @@ public interface StudentMapper {
 
     int deleteByExample(StudentExample example);
 
-    int insert(Student record);
+    int insert(List<Student> record);
 
     int insertSelective(Student record);
 

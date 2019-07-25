@@ -91,8 +91,12 @@
   <insert id="insert" parameterType="com.ding.pojo.Student">
     insert into student (id, studentname, studentage, 
       studentsex)
-    values (#{id,jdbcType=INTEGER}, #{studentname,jdbcType=VARCHAR}, #{studentage,jdbcType=INTEGER}, 
-      #{studentsex,jdbcType=VARCHAR})
+    values
+    <foreach collection="list" item="list" index="index" separator=",">
+      (#{list.id,jdbcType=INTEGER}, #{list.studentname,jdbcType=VARCHAR}, #{list.studentage,jdbcType=INTEGER},
+      #{list.studentsex,jdbcType=VARCHAR})
+    </foreach>
+
   </insert>
   <insert id="insertSelective" parameterType="com.ding.pojo.Student">
     insert into student

@@ -4,7 +4,7 @@
 <head>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/student/file" method="post">
+<form action="${pageContext.request.contextPath}/student/file" method="post" enctype="multipart/form-data">
     选择一个文件:
     <input type="file" name="uploadFile"/>
     <br/><br/>

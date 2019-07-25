@@ -12,10 +12,9 @@ import java.util.List;
 public class ReadExcel {
 
     //读取文件内容并保存为List<Student>
-    public static List readExcel(File file) {
+    public static List readExcel(InputStream is) {
         try {
             // 创建输入流，读取Excel
-            InputStream is = new FileInputStream(file.getAbsolutePath());
             // jxl提供的Workbook类
             Workbook wb = Workbook.getWorkbook(is);
             // Excel的页签数量
